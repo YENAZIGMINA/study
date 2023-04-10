@@ -14,6 +14,7 @@ header {
     position: fixed;
     top: 0; left: 0;
     backdrop-filter: blur(10px);
+    z-index: 55;
 }
 header .inner {
     width: 1440px; height: 100%;
@@ -30,7 +31,7 @@ header .inner nav>ul>li {
     margin-left: 40px;
     text-align: center;
 }
-/* 2차메뉴 */  /* ->>> 영역탈출 - vertical:top 쓰면 헤더꼭대기에 붙음 */
+/* 2차메뉴 */  /* ->>> Q. 영역탈출 - vertical:top 쓰면 헤더꼭대기에 붙음 */
 header .inner nav .depth {
     display: none;
     background-color: rgba(220, 20, 60, 0.548);
@@ -82,7 +83,7 @@ main .title h2 {
     font-size: 50px;
 }
 
-/* .cont01 */  /* ->>>헤더고정값 안먹힘 */
+/* .cont01 */  /* ->>>Q. 헤더고정값 안먹힘 */
 .cont01 {
     width: 1440px;
     margin: 200px auto;
@@ -116,7 +117,7 @@ main .title h2 {
     color: #ffffff;
     background-color: rgba(0, 0, 0, 0.527);
     width: 100%; height: 100%;
-    /* line-height: 55vh; -> 쓰면 p가 사라짐 */
+    /* Q. line-height: 55vh; -> 쓰면 p가 사라짐 */
     opacity: 0;
     transition: 0.7s;
 }
@@ -149,7 +150,7 @@ main .title h2 {
     margin: 0 auto;
 }
 .cont02 .item {
-    height: 55vh; /* 무슨기준? */
+    height: 55vh; /* Q. 무슨기준? */
     width: 100%;
     display: flex;
     align-items: center;
@@ -196,6 +197,94 @@ main .title h2 {
     background-color: #ff40407c;
     color: #ffffff;
 }
+
+
+/* video */
+.video {
+    width: 1440px;
+    object-fit: cover;
+    margin: 200px auto;
+    /* margin: 0 auto; -> Q. 동영상 중앙정렬 어떻게? */
+    position: relative;
+}
+.video .text {
+    margin-top: 50px;
+}
+.video .text h3 {
+    position: absolute;
+    top: 5%; left: 5%;
+    font-size: 100px;
+    color: crimson;
+}
+.video .text .video h3::before { /* Q. 가상선택자 안나옴 */
+    content: "";
+    width: 100PX; height: 20px;
+    background-color: rgb(193, 255, 92);
+    z-index: 1;
+}
+.video .text p {
+    font-size: 20px;
+}
+
+
+/* .picture list01 */
+.picture {
+    width: 1440px;
+    margin: 0 auto;
+}
+.picture .list01 {
+    width: 100%;
+    height: 500px;
+    margin-bottom: 20px;
+}
+.picture .list01 div {
+    display: flex;
+    justify-content: space-between;
+}
+.picture .list01 div figure {
+    width: calc(100% / 3 - 20px);
+    height: 500px;
+}
+.picture .list01 div figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+.picture .list01 div figure:hover img {
+    transform: rotateY(180deg);
+    transition: 0.5s;
+}
+
+.picture .list02 {
+    width: 100%;
+}
+.picture .list02 .p02 {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.picture .list02 .depth {
+    /* Q. 클래스명 .p02가 없는데 적용되고 있음,,?? */
+    width: calc(100% / 3 - 20px);
+    height: 500px;
+}
+.picture .list02 figure {
+    width: 100%;
+    height: 100%;
+}
+.picture .list02 figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.picture .list02 .p02 .depth figure:hover img {
+    transform: ;
+}
+.picture .list02 .p02 .depth div {
+    margin-top: 30px;
+}
+
 
 
 /* .footer */
