@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>네비게이션+제이쿼리 연습</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<div id="wrap">
+    <header class="clearfix">
+        <h1>
+            <a href="#"><img src="img/logo.png" alt="로고"></a>
+        </h1>
+        <nav class="nav">
+            <ul class="menu1 clearfix">
+                <li>
+                    <a href="#">MENU1</a>
+                    <ul class="sub-menu">
+                        <li><a href="#">sub-menu</a></li>
+                        <li><a href="#">sub-menu</a></li>
+                        <li><a href="#">sub-menu</a></li>
+                        <li><a href="#">sub-menu</a></li>
+                    </ul> <!-- .sub-menu end -->
+                </li>
+                <li>
+                    <a href="#">MENU2</a>
+                    <ul class="sub-menu">
+                        <li><a href="#">sub-menu</a></li>
+                        <li><a href="#">sub-menu</a></li>
+                        <li><a href="#">sub-menu</a></li>
+                        <li><a href="#">sub-menu</a></li>
+                    </ul> <!-- .sub-menu end -->
+                </li>
+                <li>
+                    <a href="#">MENU3</a>
+                    <ul class="sub-menu">
+                        <li><a href="#">sub-menu</a></li>
+                        <li><a href="#">sub-menu</a></li>
+                        <li><a href="#">sub-menu</a></li>
+                        <li><a href="#">sub-menu</a></li>
+                    </ul> <!-- .sub-menu end -->
+                </li>
+                <li>
+                    <a href="#">MENU4</a>
+                    <ul class="sub-menu">
+                        <li><a href="#">sub-menu</a></li>
+                        <li><a href="#">sub-menu</a></li>
+                        <li><a href="#">sub-menu</a></li>
+                        <li><a href="#">sub-menu</a></li>
+                    </ul> <!-- .sub-menu end -->
+                </li>
+            </ul> <!-- .menu1 end -->
+        </nav> <!-- .nav end -->
+    </header>
+    <main>
+        <section class="slide_banner">
+            <div class="banner clearfix">
+                <div>
+                    <figure><img src="img/beach.jpg" alt=""></figure>
+                    <h2>Beach</h2>
+                </div>
+                <div>
+                    <figure><img src="img/aurora.jpg" alt=""></figure>
+                    <h2>Aurora</h2>
+                </div>
+                <div>
+                    <figure><img src="img/violet.jpg" alt=""></figure>
+                    <h2>Lake</h2>
+                </div>
+                <div>
+                    <figure><img src="img/sunset.jpg" alt=""></figure>
+                    <h2>Senset</h2>
+                </div>
+            </div> <!-- .banner end -->
+        </section> <!-- #slide_banner end -->
+        <section id="input">
+            <div class="memo">
+                <form action="#">
+                    <h3>메모 입력칸</h3>
+                    <label for="text">메시지를 입력하세요</label>
+                    <br>
+                    <input type="textarea" id="text" cols="20" row="10">
+                    <br>
+                    <input type="submit">
+                </form>
+            </div> <!-- .memo end -->
+            <div class="table">
+                <h2>리스트</h2>
+                <table>
+                    <tr>
+                        <th> </th>
+                        <th>열제목1</th>
+                        <th>열제목2</th>
+                        <th>열제목3</th>
+                    </tr>
+                    <tr>
+                        <th>행1</th>
+                        <td>1행 1열</td>
+                        <td>1행 2열</td>
+                        <td>1행 3열</td>
+                    </tr>
+                    <tr>
+                        <th>행2</th>
+                        <td>2행 1열</td>
+                        <td>2행 2열</td>
+                        <td>2행 3열</td>
+                    </tr>
+                    <tr>
+                        <th>행3</th>
+                        <td>3행 1열</td>
+                        <td>3행 2열</td>
+                        <td>3행 3열</td>
+                    </tr>
+                    <tr>
+                        <th>행4</th>
+                        <td>4행 1열</td>
+                        <td>4행 2열</td>
+                        <td>4행 3열</td>
+                    </tr>
+                    <tr>
+                        <th>행5</th>
+                        <td>5행 1열</td>
+                        <td>5행 2열</td>
+                        <td>5행 3열</td>
+                    </tr>
+                </table>
+            </div> <!-- .table end -->
+        </section> <!-- #input end -->
+    </main>
+</div> <!-- #wrap end -->
+
+<body>
+
+
+    <!-- 💛제이쿼리 -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script>
+        //네비게이션
+        $('.nav .menu1 li').mouseover(function () {
+            $(this).find('.sub-menu').stop().slideDown()
+        })
+        $('.nav .menu1 li').mouseout(function () {
+            $(this).find('.sub-menu').stop().slideUp()
+        })
+
+
+        //메인
+        var banner = 0;
+
+        setInterval(function () {
+            if (banner < 3) {
+                banner++;
+            } else {
+                banner = 0;
+            }
+            console.log(banner)
+
+            var slide = banner * (-1440) + "px"
+            console.log(slide)
+
+            $('.banner').animate({
+                left: slide
+            }, 1000)
+
+        }, 3000)
+    </script>
+</body>
+
+</html>
