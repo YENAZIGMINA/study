@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 페이지</title>
+    <link href="css/contact.css" rel="stylesheet">
+</head>
+<body>
+    <div id="wrap">
+        <h2>로그인</h2>
+        <div class="log-in">
+            <form action="#">
+                <label for="ID">◾ ID</label>
+                <input type="text" id="ID" name="name" placeholder="최대 10글자" maxlength="10">
+                <br>
+                <label for="pw">◾ Password</label>
+                <input type="password" id="pw" name="name" placeholder="최소 6글자" minlength="6" required>  <!-- required가 ***보안표시 -->
+                <br>
+                <button type="submit">로그인</button>
+                <button type="submit" class="sign-Up">회원가입</button>
+                <button type="reset">초기화</button>
+            </form>
+        </div> <!-- .log-in end -->
+        <div class="sign-Up">
+            <form action="#">
+                <fieldset>
+                    <legend>Sign-Up</legend>
+                    <label for="name">◾ 이름</label>
+                    <input type="text" id="name" name="name" minlength="2">
+                    <br>
+                    <label for="gender">◾ 성별</label>
+                    <input type="radio" id="gender" name="name" checked> 남자
+                    <input type="radio" id="gender" name="name"> 여자
+                    <br>
+                    <label for="birth">◾ 생년월일</label>
+                    <input type="date" id="birth" name="name" min="1900-01-01" max="2023-12-31">
+                    <br>
+                    <label for="age">◾ 나이</label>
+                    <input type="number" name="name" id="age" min="0" max="100">
+                    <br>
+                    <label for="adr">◾ 주소</label>
+                    <input type="adress" id="adr" name="name">
+                    <br>
+                    <label for="level">◾ 코딩능력</label>
+                    <input type="range" id="lever" name="name" min="0" max="100" step="25">
+                    <br>
+                    <label for="lang">◾ 언어/프로그램</label>
+                    <select name="lang" id="lang">
+                        <optgroup label="프로그램">
+                            <option value="pho">포토샵</option>
+                            <option value="illu">일러스트</option>
+                            <option value="fig">피그마</option>
+                        </optgroup>
+                        <optgroup label="언어">
+                        <option value="html">HTML</option>
+                        <option value="css">CSS</option>
+                        <option value="javascript">JavaScript</option>
+                        <option value="jquery">Jaquery</option>
+                        <option value="react">React</option>
+                        </optgroup>
+                    </select>
+                    <br>
+                    <label for="like">◾ 관심분야(다중선택 가능)</label>
+                    <br>
+                    <input type="checkbox" id="like">공연·미술
+                    <input type="checkbox" id="like">운동·액티비티
+                    <input type="checkbox" id="like">독서·영화감상
+                    <input type="checkbox" id="like">공예·DIY
+                </fieldset>
+            </form>
+        </div> <!-- .sign-Up end -->
+    </div> <!-- #wrap end -->
+</body>
+</html>

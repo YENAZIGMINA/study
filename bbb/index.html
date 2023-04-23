@@ -7,7 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>네비게이션+제이쿼리 연습</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
 </head>
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+
 <div id="wrap">
     <header class="clearfix">
         <h1>
@@ -45,7 +49,7 @@
                 <li>
                     <a href="#">MENU4</a>
                     <ul class="sub-menu">
-                        <li><a href="#">sub-menu</a></li>
+                        <li class="sign-in"><a href="#">sign-in</a></li>
                         <li><a href="#">sub-menu</a></li>
                         <li><a href="#">sub-menu</a></li>
                         <li><a href="#">sub-menu</a></li>
@@ -75,13 +79,70 @@
                 </div>
             </div> <!-- .banner end -->
         </section> <!-- #slide_banner end -->
+
+        <section id="content">
+            <div class="tab_menu">
+                <div class="tab_btn">
+                    <ul class="clearfix">
+                        <li class="active"><a href="#">탭메뉴1</a></li>
+                        <li><a href="#">탭메뉴2</a></li>
+                    </ul>
+                </div> <!-- .tab_btn end -->
+                <div class="tab_cont">
+                    <div class="cont1 clearfix">
+                        <figure>
+                            <img src="img/cont1_dolphin.jpg" alt="돌고래">
+                            <figcaption>돌고래 Dolphin</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="img/cont1_turtle.jpg" alt="바다거북">
+                            <figcaption>바다거북 Sea turtle</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="img/cont1_fish.jpg" alt="물고기">
+                            <figcaption>물고기 fish</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="img/cont1_starfish.jpg" alt="별가사리">
+                            <figcaption>별가사리 Star-fish</figcaption>
+                        </figure>
+                    </div> <!-- .cont1 end -->
+                    <div class="cont2 clearfix">
+                        <figure>
+                            <img src="img/cont2_wave.jpg" alt="파도">
+                            <figcaption>파도 Wave</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="img/cont2_seascape.jpg" alt="바다전경">
+                            <figcaption>바다전경 Sea Scape</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="img/cont2_beach.jpg" alt="해변가">
+                            <figcaption>해변가 Beach</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="img/cont2_surf.jpg" alt="서핑파도">
+                            <figcaption>서핑파도 Surp</figcaption>
+                        </figure>
+                    </div> <!-- .cont2 end -->
+                </div> <!-- .tab_cont end -->
+            </div> <!-- .tab_menu end -->
+    </section> <!-- #content end -->
+    
+<div calss="pop-up">
+    <div class="layer">
+        <h3>팝업창</h3>
+        <a href="#"><i class="xi-close-square"></i></a>
+    </div> <!-- .layer end -->
+</div> <!-- .pop-up end -->
+
         <section id="input">
             <div class="memo">
                 <form action="#">
-                    <h3>메모 입력칸</h3>
+                    <h3>1:1 문의게시판</h3>
                     <label for="text">메시지를 입력하세요</label>
                     <br>
-                    <input type="textarea" id="text" cols="20" row="10">
+                    <textarea name="memo" id="text" cols="80" rows="20" placeholder="메시지를 입력하세요"></textarea>
                     <br>
                     <input type="submit">
                 </form>
@@ -131,12 +192,15 @@
     </main>
 </div> <!-- #wrap end -->
 
+
+
 <body>
 
 
     <!-- 💛제이쿼리 -->
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script>
+
         //네비게이션
         $('.nav .menu1 li').mouseover(function () {
             $(this).find('.sub-menu').stop().slideDown()
@@ -165,6 +229,32 @@
             }, 1000)
 
         }, 3000)
+
+
+        //윈도우창 연결
+        $('.sign-in').click(function(){
+            window.open("sign-in.html","log-in-page", "width=550,height=450,top=200,left=200");
+        }) // ❓w,h,r,t값 설정했는데도 전체창으로 열림
+
+
+        // tab 메뉴
+        var tabBtn=$('.tab_btn ul li');
+        var tabCont=$('.tab_cont>div');
+
+        tabCont.hide().eq(0).show(); //탭cont 숨기고, 0과 동등한 첫번째 cont 는 보여준다
+
+        tabBtn.click(function(){
+            var cont=$(this).index(); //❓(cont의 정체는 무엇?)cont는 탭btn을 눌렀을 때 번호를 붙인다고 명칭함?
+            console.log(cont)
+            tabCont.hide();  // 탭cont는 숨긴다
+            tabCont.eq(cont).show(); //❓(어디에서?) cont랑 동등한 그걸 보여준다
+            tabBtn.removeClass('active'); //그때 탭btn 클래스명 엑티브 제거하고
+            $(this).addClass('active'); // 이걸 누르면, 탭btn 클래스명 액티브 추가한다
+        })
+
+
+        //팝업창
+        
     </script>
 </body>
 
