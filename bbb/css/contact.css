@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+* {margin: 0; padding: 0;}
+
+#wrap {
+    padding: 20px;
+}
+.log-in { margin-top: 20px;}
+.log-in form button {
+    margin-top: 15px;
+    width: 70px; height: 30px;
+}
+.sign-Up form fieldset {
+    width: 500px;
+    margin-top: 30px;
+    padding: 25px;
+}
+.sign-in form fieldset label {
+    /* margin-bottom: 30px;   -> ❓인풋태그 안에서는 마진,패딩 안먹히는지? */
+}
