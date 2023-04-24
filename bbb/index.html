@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
 </head>
 
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
 
 <div id="wrap">
     <header class="clearfix">
@@ -127,14 +127,7 @@
                     </div> <!-- .cont2 end -->
                 </div> <!-- .tab_cont end -->
             </div> <!-- .tab_menu end -->
-    </section> <!-- #content end -->
-    
-<div calss="pop-up">
-    <div class="layer">
-        <h3>팝업창</h3>
-        <a href="#"><i class="xi-close-square"></i></a>
-    </div> <!-- .layer end -->
-</div> <!-- .pop-up end -->
+        </section> <!-- #content end -->
 
         <section id="input">
             <div class="memo">
@@ -189,10 +182,16 @@
                 </table>
             </div> <!-- .table end -->
         </section> <!-- #input end -->
+
+        <div calss="layer-bg">
+            <div class="layer">
+                <h3>팝업창</h3>
+                <img src="img/popup.jpg" alt="popup">
+                <a href="#"><i class="xi-close-square"></i></a>
+            </div> <!-- .layer end -->
+        </div> <!-- .layer-bg end -->
     </main>
 </div> <!-- #wrap end -->
-
-
 
 <body>
 
@@ -200,7 +199,6 @@
     <!-- 💛제이쿼리 -->
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script>
-
         //네비게이션
         $('.nav .menu1 li').mouseover(function () {
             $(this).find('.sub-menu').stop().slideDown()
@@ -232,21 +230,23 @@
 
 
         //윈도우창 연결
-        $('.sign-in').click(function(){
-            window.open("sign-in.html","log-in-page", "width=550,height=450,top=200,left=200");
+        $('.sign-in').click(function () {
+            window.open("sign-in.html", "log-in-page", "width=550,height=450,top=200,left=200");
         }) // ❓w,h,r,t값 설정했는데도 전체창으로 열림
 
 
         // tab 메뉴
-        var tabBtn=$('.tab_btn ul li');
-        var tabCont=$('.tab_cont>div');
+        var tabBtn = $('.tab_btn ul li');
+        var tabCont = $('.tab_cont>div');
 
         tabCont.hide().eq(0).show(); //탭cont 숨기고, 0과 동등한 첫번째 cont 는 보여준다
 
-        tabBtn.click(function(){
-            var cont=$(this).index(); //❓(cont의 정체는 무엇?)cont는 탭btn을 눌렀을 때 번호를 붙인다고 명칭함?
+        tabBtn.click(function (event) {
+            event.preventDefault();
+
+            var cont = $(this).index(); //❓(cont의 정체는 무엇?)cont는 탭btn을 눌렀을 때 번호를 붙인다고 명칭함?
             console.log(cont)
-            tabCont.hide();  // 탭cont는 숨긴다
+            tabCont.hide(); // 탭cont는 숨긴다
             tabCont.eq(cont).show(); //❓(어디에서?) cont랑 동등한 그걸 보여준다
             tabBtn.removeClass('active'); //그때 탭btn 클래스명 엑티브 제거하고
             $(this).addClass('active'); // 이걸 누르면, 탭btn 클래스명 액티브 추가한다
@@ -254,7 +254,6 @@
 
 
         //팝업창
-        
     </script>
 </body>
 
