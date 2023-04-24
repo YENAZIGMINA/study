@@ -1,9 +1,20 @@
 @charset "UTF-8";
 
-*{margin: 0; padding: 0;}
-li{list-style: none;}
-a{text-decoration: none; color: inherit;}
-body{
+* {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
     color: #333;
     font-family: 'Noto Sans KR', sans-serif;
 }
@@ -27,59 +38,75 @@ body{
     width: 95%;
     margin: 0 auto;
 }
+
 header {
     background-color: #91ceffb9;
     /* height: 100px; */
 }
+
 header h1 {
     width: 95px;
     float: left;
     margin-left: 30px;
 }
+
 header h1 a {
-    width: 100%; height: 100%;
+    width: 100%;
+    height: 100%;
 }
+
 header h1 a img {
-    width: 100%; height: 100%;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
+
 header .nav {
     float: right;
     height: 100px;
 }
+
 header .nav .menu1 {
     line-height: 100px;
 }
-header .nav .menu1 li { 
+
+header .nav .menu1 li {
     float: left;
     position: relative;
     width: 130px;
     transition: 0.2s;
     /* padding: 0 20px; */
 }
+
 header .nav .menu1>li:hover {
     color: #fff;
 }
+
 header .nav .menu1 li a {
     display: block;
     text-align: center;
 }
+
 header .nav .menu1 li .sub-menu {
     display: none;
     line-height: 50px;
     position: absolute;
-    top: 103px; left: 0;
+    top: 103px;
+    left: 0;
     z-index: 10;
 }
+
 header .nav .menu1 li .sub-menu li {
     background-color: #a7d7ff;
     height: 50px;
 }
+
 header .nav .menu1 li .sub-menu li a {
     height: 100%;
     color: #333;
     transition: 0.2s;
 }
+
 header .nav .menu1 li .sub-menu li a:hover {
     background-color: #89c4f5;
     color: #fff;
@@ -87,32 +114,43 @@ header .nav .menu1 li .sub-menu li a:hover {
 
 
 /* .banner */
-.slide_banner {overflow: hidden;}
+.slide_banner {
+    overflow: hidden;
+}
+
 .slide_banner .banner {
     width: 5760px;
     position: relative;
 }
+
 .slide_banner .banner div {
     position: relative;
     float: left;
     width: 1440px;
 }
+
 .slide_banner .banner div figure {
-    width: 100%; height: 600px;}
+    width: 100%;
+    height: 600px;
+}
+
 .slide_banner .banner div figure img {
     width: 100%;
     display: block;
     object-fit: cover;
 }
+
 .slide_banner .banner div h2 {
     font-family: 'ghanachoco';
     color: #ffffffa4;
     font-size: 70px;
     position: absolute;
-    top: 50%; left: 50%;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
     transition: 0.3s;
 }
+
 .slide_banner .banner div h2:hover {
     color: #299fff;
     /* scale: 1.2; -> 정중앙에 위치안함*/
@@ -120,29 +158,38 @@ header .nav .menu1 li .sub-menu li a:hover {
 
 
 /* #content */
-#content {margin-top: 70px;}
+#content {
+    margin-top: 70px;
+}
+
 #content .tab_btn ul li {
     float: left;
     margin-right: 30px;
     position: relative;
 }
+
 #content .tab_btn ul li::after {
     content: '';
     display: block;
-    width: 2px; height: 25px;
+    width: 2px;
+    height: 25px;
     background-color: #006cc5;
     position: absolute;
-    top: 10px; left: -15px;
+    top: 10px;
+    left: -15px;
 }
+
 #content .tab_btn ul li:first-child::after {
     display: none;
 }
+
 #content .tab_btn ul li a {
     display: block;
     font-size: 25px;
     color: #696969;
     font-weight: bold;
 }
+
 #content .tab_btn ul li.active a {
     color: #006cc5;
 }
@@ -152,99 +199,125 @@ header .nav .menu1 li .sub-menu li a:hover {
     margin-bottom: 120px;
     /* overflow: hidden; -> 하니까 figcaption  사라짐*/
 }
+
 #content .tab_cont>div figure {
     float: left;
-    width: 23.5%; height: 330px;
+    width: 23.5%;
+    height: 330px;
     margin-right: 2%;
 }
+
 #content .tab_cont>div figure:last-child {
     margin-right: 0;
 }
+
 #content .tab_cont>div figure img {
-    width: 100%; height: 100%;
+    width: 100%;
+    height: 100%;
 }
+
 #content .tab_cont>div figure figcaption {
     font-weight: bold;
 }
 
-/* 팝업창 */
-.pop-up {
-    display: none;
-    position: fixed;
-    left: 0; right: 0;
-    top: 0; bottom: 0;
-    width: 100%;
-    background-color: #00000070;
-}
-.pop-up .layer {
-    width: 500px; height: 500px;
-    background: url(../img/popup-bg.jpg) no-repeat center;
-    background-size: 100%;
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-}
-.pop-up .layer h3 {}
-.pop-up .layer a {
-    position: absolute;
-    bottom: 20px; right: 20px;
-    display: block;
-}
-.pop-up .layer a i {}
-
 
 /* input */
 #input {
-    /*     width: 100%; height: 100%;
-        background-color: #006cc5; */
-        margin-top: 20px;
-    /*     background: url(../img/seascape-bg.jpg) no-repeat center;
-        background-size: 100%;  ❓여기서 백그라운드이미지 안들어가는 이유?*/
-    }
-    #input .memo {
-        float: left;
-        width: 49%; height: 400px;
-        text-align: center;
-        padding-top: 50px; padding-bottom: 50px;
-        /* border: 1px solid black; */
-        background-color: #a0d4ff;
-    }
-    #input .memo h3 {
-        font-size: 30px;
-        padding-bottom: 10px;
-    }
-    #input .memo label {color: #299fff;}
-    #input .memo input {
-        width: 200px;
-        height: 30px;
-    }
-    #input .table {
-        float: right;
-        width: 49%; height: 400px;
-        padding-top: 50px; padding-bottom: 50px;
-        /* border: 1px solid black; */
-        background: url(../img/background.jpg);
-    }
-    #input .table table {
-        width: 100%;
-        text-align: center; /* ❓w90% 했을 때, 테이블 중앙정렬 어떻게? */
-    }
-    #input .table h2 {
-        font-size: 30px;
-        text-align: center;
-        padding-bottom: 20px;
-    }
-    .table table tr, .table table th, .table table td {
-        border-bottom: 2px solid #299fff;
-        text-align: center;
-        padding: 15px;
-        transition: 0.3s;
-    }
-    .table table { border-collapse: collapse;} /* ➰테이블에 열간격 없애기 */
-    .table table tr:hover {
-        background-color: #ffffff9a;
-    }
-    .table table th {
-        color: #006cc5;
-        font-size: 18px;
-    }
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+#input .memo {
+    float: left;
+    width: 49%;
+    height: 400px;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    /* border: 1px solid black; */
+    background-color: #a0d4ff;
+}
+
+#input .memo h3 {
+    font-size: 30px;
+    padding-bottom: 10px;
+}
+
+#input .memo label {
+    color: #299fff;
+}
+
+#input .memo input {
+    width: 200px;
+    height: 30px;
+}
+
+#input .table {
+    float: right;
+    width: 49%;
+    height: 400px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    /* border: 1px solid black; */
+    background: url(../img/background.jpg);
+}
+
+#input .table table {
+    width: 100%;
+    text-align: center;
+    /* ❓w90% 했을 때, 테이블 중앙정렬 어떻게? */
+}
+
+#input .table h2 {
+    font-size: 30px;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.table table tr,
+.table table th,
+.table table td {
+    border-bottom: 2px solid #299fff;
+    text-align: center;
+    padding: 15px;
+    transition: 0.3s;
+}
+
+.table table {
+    border-collapse: collapse;
+}
+
+/* ➰테이블에 열간격 없애기 */
+.table table tr:hover {
+    background-color: #ffffff9a;
+}
+.table table th {
+    color: #006cc5;
+    font-size: 18px;
+}
+
+
+/* 팝업창 */
+.layer-bg {
+    position: fixed;
+    top: 0; left: 0;
+    bottom: 0; right: 0;
+    background-color: #00000073;
+}
+.layer-bg .layer {
+    background-color: #006cc5;
+    position: relative;
+}
+.layer-bg .layer h3 {}
+.layer-bg .layer img {}
+.layer-bg .layer a {
+    display: inline-block;
+    font-size: 30px;
+    position: absolute;
+    top: 0; left: 0;
+}
+.layer-bg .layer a i {
+    display: block;
+    font-size: 30px;
+    
+}
