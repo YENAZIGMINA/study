@@ -1,0 +1,205 @@
+@charset "UTF-8";
+*{margin: 0; padding: 0;}
+body {color: #222; font-size: 16px;}
+li {list-style: none;}
+a {text-decoration: none; color: inherit;}
+
+
+.clearfix::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.row {
+    background: url(https://blog.kakaocdn.net/dn/bLy4d0/btqMNvTYhA8/M0mxb2hpwNzWK9ItxFcYQk/img.jpg) no-repeat center;
+    background-size: cover;
+}
+header {
+    background-color: rgba(207, 24, 24, 0.8);
+    /* width: 100vw; height: 100vh; */
+    border-bottom: 1px solid #fff;
+}
+.container {
+    width: 1440px;
+    margin: 0 auto;
+}
+
+/* header */
+.nav{}
+.nav h1 {
+    width: 100%;
+}
+.nav h1 img {
+    float: left;
+    width: 10%;
+}
+.nav h1 ul {
+    float: left;
+    width: 75%;
+    margin-left: 110px;
+    margin-top: 57px;
+}
+.nav h1 ul li {float: left;}
+.nav h1 ul li a {
+    font-size: 20px;
+    margin-right: 32px;
+    letter-spacing: -1px;
+    color: #fff;
+}
+.nav h1 ul li:last-child a {margin-right: 0;}
+.nav h1 span {
+    float: right;
+    width: 3%;
+    display: inline-block;
+}
+.nav h1 span i {
+    color: #fff;
+    font-size: 32px;
+    margin-top: 55px;
+}
+
+/* main */
+.main {
+    background-color: rgba(207, 24, 24, 0.8);
+}
+.slide-wrap {}
+.slide {
+    width: 100%; height: 100vh;
+}
+.slide .left_view {
+    position: relative;
+    float: left; width: 45%;
+    height: 100%;
+}
+.slide .left_view .text {
+    position: absolute;
+    bottom: 250px; left: 85px;
+}
+.slide .left_view .text h2 {
+    color: #fff;
+    font-size: 175px;
+    line-height: 200px;
+}
+.slide .left_view .text span {
+    color: #fff;
+    font-size: 40px;
+    letter-spacing: 20px;
+    font-weight: bold;
+    margin-left: 492px;
+    line-height: 0;
+}
+
+.slide .left_view figure {
+    width: 200px;
+}
+.slide .left_view figure img {
+    width: 100%;
+    position: absolute;
+    bottom: 175px; left: 20px;
+}
+
+.slide .right_view {
+    position: relative;
+    float: right; width: 50%;
+    height: 100%;
+}
+.slide .right_view .r_inner {
+    position: absolute;
+    bottom: 285px; right: 50px;
+}
+.slide .right_view .title {}
+.title_t {margin-bottom: 20px;}
+.slide .right_view .title h3 {
+    float: left;
+    color: #fff;
+    font-size: 50px;
+    font-weight: bold;
+    letter-spacing: -2px;
+}
+.slide .right_view .title h3>i {
+    margin-right: 20px;
+}
+.slide .right_view .title .star {
+    float: right;
+}
+.slide .right_view .title .star i {
+    /* float: right; */
+    color: yellow;
+    font-size: 17px;
+    margin-left: -2px;
+}
+.slide .right_view .title .star i:last-child {
+    color: #fff;
+}
+.slide .right_view .r_inner>span {
+    color: #fff;
+    font-weight: bold;
+    font-size: 19px;
+    letter-spacing: -1px;
+    margin-bottom: 14px;
+    display: block;
+}
+.slide .right_view p {
+    display: block;
+    color: #fff;
+    margin-bottom: 14px;
+    font-weight: bold;
+}
+
+.slide ul {}
+.slide ul li {position: relative;}
+.slide ul li::after {
+    content: '';
+    position: absolute;
+    top: 8px; left: -18px;
+    width: 5px; height: 5px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+.slide ul li i {color: yellow;}
+.slide ul li span {
+    color: #fff;
+}
+
+
+.bottom {}
+.bottom span {}
+.bottom span:nth-child(1) {}
+.bottom span:nth-child(2) {}
+.bottom span:nth-child(3) {}
+
+
+.slide-wrap .slick-arrow {
+    position: relative;
+    font-size: 0;
+    background-color: rgba(0,0,0,0.6);
+    border: none;
+    width: 45px; height: 60px;
+    border-radius: 2px;
+}
+.slide-wrap .slick-prev {
+    position: absolute;
+    top: 50%; left: 0;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+.slide-wrap .slick-prev::after {
+    content: '\f053';
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 20px;
+    color: #fff;
+}
+.slide-wrap .slick-next {
+    position: absolute;
+    top: 50%; right: 0;
+    transform: translateY(-50%);
+}
+.slide-wrap .slick-next::after {
+    content: '\f054';
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 20px;
+    color: #fff;
+}
