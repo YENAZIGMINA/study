@@ -1,0 +1,42 @@
+*{margin: 0; padding: 0;}
+
+header{position: absolute; 
+    left: 0; top: 0; right: 0;
+    z-index: 10;
+}
+.banner{height: 100vh;}
+.slider{height: 100%; overflow: hidden;}
+.slider .slick-slide{position: relative;}
+.slider .slide_left{height: 100vh;
+    width: 50%; background-color: rgb(142, 41, 162);
+    float: left;
+}
+.slider .slide_right{height: 100vh;
+    width: 50%; background-color: plum;
+    float: right;
+}
+
+.slider .slide_left h2{
+    font-size: 100px;
+    position: absolute;
+    left: -100%;
+    top:calc(50% - 400px);
+    opacity: 0;
+    transition: 1s 0.5s;
+}
+.slider .slick-active .slide_left h2{
+    opacity: 1;
+    left: calc(50% - 400px);
+
+}
+.slider .slide_left .shoes{
+    position: absolute;
+    left:100%;
+    top:calc(50% + 50px);
+    transition: 1s 1s;
+    opacity: 0;
+}
+.slider .slick-active .slide_left .shoes{
+    opacity: 1;
+    left: calc(50% - 400px);
+}
