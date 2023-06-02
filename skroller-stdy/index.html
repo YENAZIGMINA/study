@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스크롤러 과제</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="text"></div>
+    <div class="fixed-bg"
+    data-500="background-color:rgb(33,83,56); top:0" 
+    data-1000="background-color:rgb(33,83,56)" 
+    data-2000="background-color:rgb(33,83,56)"
+    data-2500="background-color:rgb(33,83,56)"
+    data-3000="background-color:rgb(33,83,56); top:-100%"
+    data-4000="background-color:rgb(72,188,231); top:0%"
+    data-5000="background-color:rgb(72,188,231)"
+    data-6000="background-color:rgb(72,188,231)"
+    data-7000="background-color:rgb(72,188,231);"
+    data-12850="background-color:rgb(72,188,231);"
+    data-13000="background-color:rgb(33,83,56);"
+    ></div>
+
+
+    <section id="slide01" class="slide" 
+    data-0="opacity:0; transform:translateX(-100%)" 
+    data-500="opacity:1; transform:translateX(0%)" 
+    data-2000="opacity:0; "  
+    >
+        <img src="img/princess1.jpg" class="img" alt="공주">
+        <div class="text">
+
+        </div>
+
+    </section>
+    
+    <section id="slide01-1" class="slide" 
+    data-3="opacity:0; top:75%" 
+    data-500="opacity:1; left:80%" 
+    data-2000="opacity:0; "  
+    >
+        <div>또각또각..<br>
+            <span>&nbsp;&nbsp;공주 등장</span>
+        </div>
+
+    </section>
+
+    <section id="slide02" class="slide"
+    data-1000="opacity:0; transform:translateX(-100%)"
+    data-2000="opacity:1; transform:translateX(0%)"
+    data-2500="opacity:1 "
+    data-3000="opacity:0 "
+    >
+        <img src="img/princess2.jpg" class="img" alt="공주">
+
+    </section>
+
+    <section id="slide03" class="slide"
+    data-2000="opacity:0; transform:scale(0,0)"
+    data-2500="opacity:1; transform:scale(1,1)"
+    data-7400="opacity:1; transform:scale(1,1)"
+    data-7600="opacity:1; transform:scale(1.1,1.1)"
+    data-7800="opacity:1; transform:scale(1,1)"
+    data-8000="opacity:1; transform:scale(1.1,1.1)"
+    data-8500="opacity:1;"
+    data-9000="opacity:0;"
+    >
+        <img src="img/flower.png" class="flower" alt="꽃">
+
+    </section>
+
+    <section id="slide04" class="slide"
+    data-3000="transform:translateY(100%)"
+    data-4000="transform:translateY(0%);"
+    data-7000="transform:translateY(-100%);"
+    >
+        <img src="img/slide1.jpg" class="slide" alt="꽃">
+        <div id="particles-js"></div> <!-- 파티클 -->
+
+    </section>
+
+    <section id="slide05" class="slide"
+    data-4000="transform:translateY(-100%)"
+    data-5000="transform:translateY(0%);"
+    data-7000="transform:translateY(-100%);"
+    >
+        <img src="img/slide2.jpg" class="slide" alt="꽃">
+
+    </section>
+
+    <section id="slide06" class="slide"
+    data-4000="transform:translateY(100%)"
+    data-5000="transform:translateY(-50%);"
+    data-7000="transform:translateY(100%);"
+    >
+        <img src="img/slide3.jpg" class="slide" alt="꽃">
+
+    </section>
+
+    <section id="slide07" class="slide"
+    data-6000="transform:translateX(100%); "
+    data-7000="transform:translateX(0%); opacity:1 "
+    data-7500="transform:translateX(0%); opacity:0 "
+    >
+        <div class="slide-content">
+            <h2>Dream is a ballerina</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. <br> Sint distinctio aperiam amet nam quis possimus dolor beatae maxime aspernatur <br> optio fugit quam totam dicta laborum officia ab, earum nemo provident.</p>
+        </div>
+
+    </section>
+
+    <section id="slide08" class="slide"
+    data-7500="opacity:0; top:30%; left:70%"
+    data-7600="opacity:1; top:25%; left:65%"
+    data-8000="opacity:0; "
+    >
+    <img src="img/b1.png" class="pose" alt="발레">
+    </section>
+
+    <section id="slide09" class="slide"
+    data-7600="opacity:0; top:30%; left:70%"
+    data-7700="opacity:1; top:25%; left:65%"
+    data-8000="opacity:1; "
+    data-8200="opacity:0;"
+    >
+    <img src="img/b2.png" alt="발레">
+    </section>
+
+    <section id="slide10" class="slide"
+    data-7700="opacity:0; top:25%; left:55%"
+    data-8000="opacity:1; top:15%; left:40%"
+    data-8400="opacity:1; "
+    data-8700="opacity:0;"
+    >
+    <img src="img/b4.png" alt="발레">
+    </section>
+
+    <section id="slide11" class="slide"
+    data-8000="opacity:0; top:25%; left:65%"
+    data-8400="opacity:1; top:15%; left:45%"
+    data-8700="opacity:1; "
+    data-9200="opacity:0;"
+    >
+    <img src="img/b6.png" class="pose2" alt="발레">
+    </section>
+
+    <section id="slide12" class="slide"
+    data-8700="opacity:0; top:15%; left:50%"
+    data-9200="opacity:1; top:15%; left:20%; "
+    data-9600="opacity:1; "
+    data-9800="opacity:0;"
+    >
+    <img src="img/b8.png" alt="발레">
+    </section>
+
+    <section id="slide13" class="slide"
+    data-9200="opacity:0; top:20%; left:20%; transform:scale(0.9)"
+    data-9800="opacity:1; top:10%; left:10%; transform:scale(1.2)"
+    data-10000="opacity:1; transform:scale(1)"
+    data-10100="opacity:1; transform:scale(1)"
+    data-10300="opacity:0; transform:scale(1.3)"
+    >
+    <img src="img/b10.png" alt="발레">
+    </section>
+
+    <section id="l-text" class="slide"
+    data-9000="opacity:0; transform:scale(0.5)"
+    data-10300="opacity:1; transform:scale(1.3)"
+    data-10300="opacity:0; transform:scale(1.3)"
+    >
+    <p>Dream</p>
+    </section>
+
+
+    <section id="slide14" class="slide"
+    data-10300="opacity:0; top:-100%"
+    data-11000="opacity:1; top:0%"
+    data-12850="opacity:1; top:0%"
+    data-13000="opacity:0; top:0%"
+    >
+        <img src="img/bg.png" alt="배경">
+    </section>
+
+    <section id="slide15" class="slide"
+    data-11500="opacity:0; top:50%; left:80%"
+    data-11700="opacity:1; top:60%; left:70%"
+    data-11800="opacity:1; top:60%; left:90%"
+    data-12000="opacity:1; top:80%; left:75%"
+    data-12500="opacity:1; "
+    data-12700="opacity:0; "
+    >
+        <img src="img/flower-leave.png" alt="꽃잎">
+    </section>
+
+    <section id="slide16" class="slide"
+    data-11700="opacity:0; top:10%; left:20%; transform:scale(0.5)"
+    data-11900="opacity:1; top:35%; left:10%; transform:scale(0.7);"
+    data-12100="opacity:1; top:40%; left:15%; transform:scale(0.5);"
+    data-12300="opacity:1; top:45%; left:30%; transform:scale(0.7)"
+    data-12500="opacity:1; top:55%; left:20%; transform:scale(0.7)"
+    data-12600="opacity:1; "
+    data-12700="opacity:0; "
+    >
+        <img src="img/flower-leave.png" alt="꽃잎">
+    </section>
+
+    <section id="slide17" class="slide"
+    data-11900="opacity:0; top:5%; left:70%; "
+    data-12100="opacity:1; top:10%; left:80%;"
+    data-12300="opacity:1; top:20%; left:65%; "
+    data-12500="opacity:1; top:40%; left:75%; "
+    data-12600="opacity:0; "
+    >
+        <img src="img/flower-leave.png" alt="꽃잎">
+    </section>
+
+    <section id="flower-bloom" class="slide"
+    data-13200="opacity:0; left:20%"
+    data-13400="opacity:1; left:55%"
+    data-13900="opacity:0; left:-100%"
+    >
+        <img src="img/flowers.png" alt="꽃다발">
+
+    </section>
+
+    <section id="flower-bloom" class="slide"
+    data-13300="opacity:0; top: 20%; left:20%"
+    data-13500="opacity:1; top: 25%; left:40%"
+    data-13900="opacity:0; left:-100%"
+    >
+        <img src="img/flowers.png" alt="꽃다발">
+
+    </section>
+
+    <section id="flower-bloom2" class="slide"
+    data-13400="opacity:0; top: 50%; left:20%"
+    data-13600="opacity:1; top: 50%; left:60%"
+    data-13900="opacity:0; left:-100%"
+    >
+        <img src="img/flowers.png" alt="꽃다발">
+
+    </section>
+
+
+
+    <section id="cat" class="slide"
+    data-13000="opacity:0; top:-100%"
+    data-13200="opacity:1; top:0%"
+    data-13600="opacity:1; top:0%; left:0%"
+    data-13900="opacity:0; left:-100%"
+    >
+        <img src="img/cat.jpg" alt="고양이">
+
+    </section>
+
+    <section id="frame" class="slide"
+    data-13900="opacity:0; transform:scale(0) "
+    data-14500="opacity:1; transform:scale(1)"
+    >
+        <img src="img/frame.jpg" alt="액자">
+
+    </section>
+
+    <div id="butter">
+        <section id="butterfly" class="slide butterfly-r"
+        data-14450="opacity:0; transform:scale(0.2); left:15% "
+        data-14500="opacity:1; transform:scale(0.29); left:15%"
+        >
+            <img src="img/butterfly-R.png" alt="나비왼쪽">
+
+        </section>
+
+        <section id="butterfly" class="slide butterfly-l"
+        data-14450="opacity:0; transform:scale(0.2); left:20.5% "
+        data-14500="opacity:1; transform:scale(0.29); left:20.5%"
+        >
+            <img src="img/butterfly-L.png" alt="나비오른쪽">
+
+        </section>
+    </div>
+
+
+    
+    
+
+
+    <script src="js/skrollr.min.js "></script>
+    <script>
+        var s = skrollr.init();
+
+        let text = document.querySelector('.text');
+        window.addEventListener('scroll', function () {
+            let wScroll = window.pageYOffset;
+            console.log(parseInt(wScroll))
+            text.innerHTML = parseInt(wScroll)
+        })
+    </script>
+
+    <script src="js/particles.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
