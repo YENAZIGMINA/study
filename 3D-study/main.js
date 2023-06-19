@@ -1,40 +1,35 @@
-//querySelector는 css형식으로 부를 수 있다, 이것도 getelement~처럼 배열로 들어온다
-let stageEle = document.querySelector(".stage");
-let houseEle = document.querySelector(".house");
-let maxScrollValue; //실제 스크롤이 움직이는 높이값
-let mousePos = {
-  x: 0,
-  y: 0,
-}; //객체형식
+let stageElement = document.querySelector('.stage');
+let houseElement = document.querySelector('.house');
+let maxScrollVal;
+let mousePos = {x:0, y:0};
 
-function resizeHandler() {
-  //현재 .world를 fixed 시켜놔서 world가 보이는 상황인데 body의 높이값을 찾는방법
-  //전체 스크롤값
-  maxScrollValue = document.body.offsetHeight - window.innerHeight;
-  //maxScrollVal : 현재 페이지에서 스크롤이 가능한 최대 픽셀 거리를 저장하는 변수
-  //문서(body)전체화면 높이값 - 현재 보이는 화면 높이값
+
+function resizeHand (){
+    maxScrollVal = document.body.offsetHeight - window.innerHeight;
+//maxScrollVal : 현재 페이지에서 스크롤이 가능한 최대 픽셀 거리를 저장하는 변수
+//문서(body)전체화면 높이값 - 현재 보이는 화면 높이값
 }
 
-//내린만큼의 스크롤값 / window scrollTop값
-window.addEventListener("scroll", function () {
-  let scrollPer = pageYOffset / maxScrollValue;
-  //console.log(scrollPer) //최대1
-  let zMove = scrollPer * 970 - 480; //-480하는 이유는 튕기지 말라고??
-  houseEle.style.transform = `translateZ(${zMove}vw)`;
-});
 
-window.addEventListener("mousemove", function (e) {
-  //console.log(e.clientX)
 
-  //e.clientX/ : 현재 화면에서 마우스의 x값을 추출
-  //e.clientY/ : 현재 화면에서 마우스의 y값을 추출
-  //window.innerWidth : 현재화면의 넓이값
-  //window.innerHeight : 현재화면의 높이값
-  mousePos.x = (e.clientX / window.innerWidth) * 10;
-  mousePos.y = -(e.clientY / window.innerHeight) * 5;
+//🎀 내린만큼 스크롤값 계산
+window.addEventListener("scroll",function(){
+    let scrollPer = pageYOffset / maxScrollVal;
+    // scrollPer : 전체화면 스크롤값-현재스크롤값 비율구하기
+    let zMove = scrollPer * 1000 - 480; 
+    //zMove : houseElement 요소를 얼마나 움직일지 결정하는 역할
+    houseElement.style.transform = `translateZ(${zMove}vw)`;
+})
+//✔ 페이지가 스크롤될 때마다 스크롤 위치에 비례하여 zMove 값을 계산하고, 이를 사용하여 houseElement 요소를 Z 축을 따라 움직이게 함 (스크롤에 따라 houseElement가 3D 공간에서 움직이는 효과)
 
-  stageEle.style.transform = `rotateY(${mousePos.x}deg) rotateX(${mousePos.y}deg)`;
-});
 
-window.addEventListener("resize", resizeHandler);
-resizeHandler();
+//현재화면에서 마우스 x,y값 추출
+window.addEventListener("mousemove",function(e){
+    mousePos.x = (e.clientX / window.innerWidth) * 25;
+    mousePos.y = -(e.clientY / window.innerWidth) * 7;
+
+    stageElement.style.transform = `rotateY(${mousePos.x}deg) rotateX(${mousePos.y}deg)`;
+})
+
+window.addEventListener("resize", resizeHand);
+resizeHand();

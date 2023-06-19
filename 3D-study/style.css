@@ -65,14 +65,22 @@ transform: rotateY(90deg) translateZ(-400vw);
 
 .wall-content h2 {color: #fff;}
 
+/* 💛위치조정 */
 .world .stage .wall-front{}
 .world .stage .wall-front-a0{transform: translateZ(370vw);}
 .world .stage .wall-front-a{transform: translateZ(310vw);}
 .world .stage .wall-front-a2{transform: translateZ(250vw);}
 .world .stage .wall-front-b{transform: translateZ(50vw);}
+.world .stage .wall-front-b1{transform: translateZ(50vw);}
 .world .stage .wall-front-2b{transform: translateZ(40vw);}
+.world .stage .wall-front-c0{transform: translateZ(-100vw);}
+.world .stage .wall-front-c0-1{transform: translateZ(-50vw);}
 .world .stage .wall-front-c{transform: translateZ(-200vw);}
-.world .stage .wall-front-d{transform: translateZ(-500vw);}
+.world .stage .wall-front-c0-2{transform: translateZ(-150vw);}
+.world .stage .wall-front-c2{transform: translateZ(-230vw);}
+.world .stage .wall-front-d{transform: translateZ(-350vw);}
+.world .stage .wall-front-e0{transform: translateZ(-440vw);}
+.world .stage .wall-front-e{transform: translateZ(-500vw);}
 
 
 .world .stage .wall-front-a0 {
@@ -127,7 +135,7 @@ transform: rotateY(90deg) translateZ(-400vw);
     color: #fff;
     display: block;
     text-align: center;
-    transform: translateY(730px);
+    transform: translateY(859px);
     font-size: 27px;
 }
 
@@ -146,6 +154,8 @@ transform: rotateY(90deg) translateZ(-400vw);
 }
 .world .stage .wall-front-b {
     background-color: #23314ed5;
+}
+.world .stage .wall-front-b-wrap {
     display: flex;
 }
 .world .stage .wall-front-b .wall-content {
@@ -153,17 +163,18 @@ transform: rotateY(90deg) translateZ(-400vw);
 }
 .world .stage .wall-front-b .wall-content img {
     width: 500px;
-    transform: translateX(44px) translateY(98px);
+    transform: translateX(65px) translateY(110px);
     border-radius: 30px;
 }
 .world .stage .wall-front-b .profile {
-    margin-left: 60px;
+    margin-left: 90px;
     padding: 65px 0;
 }
 .world .stage .wall-front-b .profile h2 {
     font-size: 50px;
     color: #fff;
-    margin-bottom: 40px;
+    margin-top: 10px;
+    margin-bottom: 60px;
 }
 .world .stage .wall-front-b .profile p {
     font-family: 'Cafe24Ssurround';
@@ -181,20 +192,214 @@ transform: rotateY(90deg) translateZ(-400vw);
     opacity: 0.5;
     animation: broken 1s cubic-bezier(0.72, 0.83, 0.4, 1.29) infinite alternate both;
 }
+.world .stage .wall-front-b1 .circle {
+    width: 450px; height: 450px;
 
+}
+.world .stage .wall-front-b1 .circle img {
+    width: 100%; height: 100%;
+    margin-left: 1220px; margin-top: 450px;
+    /* transform: translate(1200px,550px); */
+    animation: textro 10s linear infinite alternate;
+}
+
+
+.world .stage .wall-front-c0 .wall-content {
+    width: 200px; height: 200px;
+    transform: translate(150px,150px);
+    perspective: 300px;
+}
+.world .stage .wall-front-c0 .wall-content img {
+    width: 100%; height: 100%;
+    animation: heart 1s infinite alternate;
+}
+.world .stage .wall-front-c0-1 .wall-content {
+    width: 150px; height: 150px;
+    transform: translate(700px,500px);
+    perspective: 300px;
+}
+.world .stage .wall-front-c0-1 .wall-content img {
+    width: 100%; height: 100%;
+    animation: heart 1.5s infinite alternate;
+}
+.world .stage .wall-front-c0-2 .wall-content {
+    width: 110px; height: 110px;
+    transform: translate(1400px,300px);
+    perspective: 300px;
+}
+.world .stage .wall-front-c0-2 .wall-content img {
+    width: 100%; height: 100%;
+    animation: heart 2s infinite alternate;
+}
 
 .world .stage .wall-front-c {
     background-color: #344a749e;
 }
+.world .stage .wall-front-c .wall-content {
+    text-align: center;
+}
+.wall-front-c .wall-content .c-img {
+    display: flex;
+    transform: translate(80px, 20px);
+}
+.wall-front-c .wall-content .c-img figure {
+    width: 450px; height: 450px;
+    margin-left: 90px;
+}
+.wall-front-c .wall-content .c-img figure img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.wall-front-c .wall-content .c-img figure img {
+    position: relative;
+}
+.wall-front-c .ro {
+    position: absolute;
+    left: calc(50% - 350px);
+    top: calc(50% - 240px);
+    width: 480px; height: 480px;
+    animation: rotate 4s linear infinite alternate;
+}
+.world .stage .wall-front-c .ro .loader_blob2 {
+    position: absolute;
+    top: 0; left: 0;
+    width: 450px; height: 450px;
+    border: 2px solid rgb(244, 202, 86);
+    animation: go 3s linear infinite alternate;
+}
+.world .stage .wall-front-c h2 {
+    font-size: 55px;
+    margin: 30px;
+    letter-spacing: 2px;
+}
+.world .stage .wall-front-c h2 strong {
+    color:rgb(244, 202, 86);
+}
+.world .stage .wall-front-c .wall-text {
+    position: relative;
+    text-align: center;
+    margin-top: 100px;
+}
+.world .stage .wall-front-c .wall-text::after{
+    content: '';
+    display: block;
+    width: 750px; height: 50px;
+    background-color: rgb(244, 202, 86);
+    position: absolute;
+    bottom: 0; left: 585px;
+    z-index: -1;
+}
+.world .stage .wall-front-c .wall-text p {
+    font-family: 'Cafe24Ssurround';
+    font-size: 37px; letter-spacing: 2px;
+    color: #351c1c;
+    
+}
+.world .stage .wall-front-c2 .wall-content .bg-img {
+    /* transform: scale(10); */
+    width: 100%; height: 100%;
+    mix-blend-mode: darken;
+    display: block;
+    opacity: 0.5;
+    animation: broken 1s cubic-bezier(0.72, 0.83, 0.4, 1.29) infinite alternate both;
+}
+
+
+
 .world .stage .wall-front-d {
     background-color: #4562989e;
+}
+.world .stage .wall-front-d .wall-wrap {
+    display: flex;
+}
+.world .stage .wall-front-d .wall-content {
+    width: 50%;
+}
+.world .stage .wall-front-d .wall-content h2{
+    padding: 70px;
+    font-size: 80px;
+    line-height: 1.5; letter-spacing: 2px;
+}
+.world .stage .wall-front-d .wall-content h2 strong {
+    color: rgb(244, 202, 86);
+    box-shadow: inset;
+    animation: twinkle 1s infinite;
+}
+.world .stage .wall-front-d .wall-content .desc {
+    padding: 80px;
+    margin-top: 70px;
+}
+.world .stage .wall-front-d .wall-content p {
+    font-family: 'Cafe24Ssurround';
+    color: #fff;
+    font-size: 27px;
+    display: block;
+    margin-bottom: 30px;
+    line-height: 1.5;
+    border-bottom: 1px solid #fff;
+}
+.world .stage .wall-front-d .wall-content p strong {
+    color: rgb(244, 202, 86);
+    animation: twinkle 1s infinite;
+}
+.world .stage .wall-front-d .d-img {
+    display: flex;
+    margin-bottom: 20px;
+}
+.world .stage .wall-front-d .d-img img {
+    width: 300px; height: 300px;
+    object-fit: cover;
+}
+.world .stage .wall-front-d .ballet {}
+.world .stage .wall-front-d .cook {
+    transform: translateX(-120px);
+}
+.world .stage .wall-front-d .fishing {
+    transform: translateX(197px);
+}
+
+
+.world .stage .wall-front-e {
+    background-color: #5476b69e;
+    background: url(img/moon.jpg) no-repeat center;
+    background-size: cover;
+}
+.world .stage .wall-front-e .wall-content {
+    text-align: center;
+}
+.world .stage .wall-front-e h2 {
+    font-size: 70px;
+    transform: translate(0px, 250px);
+}
+.world .stage .wall-front-e .icon {
+    transform: translateY(250px);
+}
+.world .stage .wall-front-e .icon i{
+    color: rgb(255, 146, 21);
+    font-size: 100px;
+    animation: height 1s infinite;
+}
+
+
+
+
+.world .stage .wall-front-e0 .wall-content {
+    width: 300px; height: 300px;
+    transform: translate(200px, 600px);
+}
+.world .stage .wall-front-e0 img {
+    width: 100%; height: 100%;
+    box-shadow: inset 10px #0e0e0e;
 }
 
 
 @keyframes broken {
-    0% {transform: rotate(0deg) scale(1);}
-    100% {transform: rotate(30deg) scale(5);}
+    0% {opacity: 0;}
+    50%{transform: rotate(0deg) scale(1); opacity: 0.5;}
+    100% {transform: rotate(30deg) scale(5); opacity: 1;}
 }
+
 
 @keyframes name {
     0% {
@@ -205,4 +410,45 @@ transform: rotateY(90deg) translateZ(-400vw);
         opacity: 1;
         transform: translateX(0px);
     }
+}
+
+@keyframes go {
+    0% {
+        border-radius: 61% 39% 57% 43% / 28% 56% 44% 72%;
+        transform: scale(0.98);
+    }
+
+    50% {
+        border-radius: 54% 46% 48% 52% / 37% 45% 55% 63%;
+    }
+
+    100% {
+        border-radius: 47% 53% 35% 65% / 47% 53% 47% 53%;
+        transform: scale(1.05);
+    }
+}
+
+@keyframes rotate {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(100deg);}
+}
+
+@keyframes twinkle {
+    0% {opacity: 0.5;}
+    100% {opacity: 1;}
+}
+
+@keyframes height {
+    0% {font-size: 0;}
+    100% {font-size: 80px;}
+}
+
+@keyframes heart {
+    0% {transform: rotateY(0deg);}
+    100% {transform: rotateY(180deg);}
+}
+
+@keyframes textro{
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
 }
