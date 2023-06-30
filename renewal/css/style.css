@@ -4,6 +4,13 @@
 font-family: 'Caveat', cursive;
 font-family: 'Noto Sans KR', sans-serif;
 font-family: 'Pacifico', cursive; */
+@font-face {
+    font-family: 'LINESeedKR-Bd';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
 
 html {scroll-behavior: smooth;}
 *{margin: 0; padding: 0;}
@@ -21,6 +28,7 @@ a {text-decoration: none; color: #333;}
 }
 .cabin {font-family: 'Cabin', sans-serif;}
 .noto {font-family: 'Noto Sans KR', sans-serif;}
+.line_f {font-family: 'LINESeedKR-Bd';}
 
 
 /* 레이아웃 */
@@ -33,11 +41,11 @@ a {text-decoration: none; color: #333;}
 }
 #intro {
     background-color: #ff9d10;
-    /* width: 100vw; height: 100vh; */
 }
 #header {
-    height: 300vh;
+    height: 100vh;
 }
+
 
 /* 마우스커서 */
 body .cursor_wrap {height: 100%; width: 100%;}
@@ -255,7 +263,7 @@ body .cursor {
 }
 .i_wrap .i_title {
     position: absolute;
-    bottom: 0%; left: 1%;
+    bottom: 0; left: 25px;
     animation: intro 3s ease-in-out 0.3s 1;
 }
 .i_wrap .i_title span {
@@ -263,7 +271,7 @@ body .cursor {
     font-weight: 800;
     letter-spacing: -2px;
     display: inline-block;
-    font-size: 140px;
+    font-size: 160px;
     color: #ff7c03;
 }
 .i_wrap .i_title span.dis {
@@ -306,7 +314,6 @@ body .cursor {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 30px; margin-top: 30px;
-    box-sizing: border-box;
     width: 100%; height: 85px;
     background-color: #fff;
     border-radius: 70px;
@@ -319,15 +326,16 @@ body .cursor {
     width: 100%;
     padding: 10px 45px 10px;
 }
+
 .h_inner .menu_left ul {
     display: flex;
     justify-content: space-between;
 }
 .h_inner .menu_left ul>li {
     position: relative;
-    margin: 0 20px;
+    margin: 0 31px;
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 800; font-size: 18px;
     line-height: 85px;
     box-sizing: border-box;
     z-index: 10;
@@ -361,8 +369,8 @@ body .cursor {
 .h_inner .menu_left>ul>li>a::before{
     content: '';
     position: absolute;
-    top: 30px;
-    width: 0%; height: 20px;
+    top: 30px; left: 0;
+    width: 0; height: 20px;
     background-color: #ffec3da9;
     transition: 0.3;
     z-index: -30;
@@ -375,30 +383,60 @@ body .cursor {
 /* 2차메뉴 */
 .h_inner .menu_left .depth {
     position: absolute;
-    top: 84px; left: -28px;
+    top: 84px; left: 50%;
+    transform: translateX(-50%);
     flex-direction: column;
     background-color: rgba(255,255,255,0.8);
     border-radius: 0 0 5px 5px;
     width: 100px; /* 100%로 하니 부모넓이 따라가서 값 설정 */
-    padding: 20px;
+    padding: 10px;
     display: none;
 }
 .h_inner .menu_left .depth li {
-    line-height: 45px;
+    line-height: 40px;
     text-align: center;
     margin: auto;
 }
 .h_inner .menu_left .depth li:first-child {padding-top: 0;}
 .h_inner .menu_left .depth li:last-child {padding-bottom: 0;}
 .h_inner .menu_left .depth li a {
-    font-size: 14px; font-weight: 400;
+    font-size: 15px; font-weight: 400;
     color: #4d4d4d;
-    display: inline-block;
+    display: block;
+    transition: 0.3s;
 }
-.h_inner .menu_left .depth li:hover a {color: #ff771d;}
+.h_inner .menu_left .depth li:hover a {
+    color: #ff771d;
+    background-color: #fff;
+}
+.h_inner .menu_left .depth li a::after{
+    content: '';
+    position: absolute;
+    top: 0px; left: 0;
+    height: 1px; width: 0;
+    background-color: #ff771d;
+    transition: 0.3s;
+}
+.h_inner .menu_left .depth li a:hover::after {
+    width: 100%;
+}
+.h_inner .menu_left .depth li a::before{
+    content: '';
+    position: absolute;
+    bottom: 0px; right: 0;
+    height: 1px; width: 0;
+    background-color: #ff771d;
+    transition: 0.3s;
+}
+.h_inner .menu_left .depth li a:hover::before {
+    width: 100%;
+}
 
 
-.h_inner .menu_right {}
+.h_inner .menu_right ul li:hover::after {
+    width: 100%;
+}
+
 .h_inner .menu_right ul {
     display: flex;
 }

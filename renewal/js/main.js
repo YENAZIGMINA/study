@@ -11,8 +11,10 @@ $('.cabin li').click(function(e) {
     e.preventDefault();
 });
 $('.cabin li').mouseover(function(){
-    $(this).find('.depth').show();
+    $(this).find('.depth').stop().slideDown();
 })
 $('.cabin li').mouseout(function(){
-    $(this).find('.depth').hide();
+    $(this).find('.depth').stop().slideUp();
 })
+
+
