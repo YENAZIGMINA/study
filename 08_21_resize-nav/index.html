@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .west {
+    flex: 0 0 auto;
+    width: 200px; /* 초기 너비 설정 */
+    min-width: 100px; /* 최소 너비 제한 */
+    background-color: #f2f2f2;
+    overflow: auto;
+    cursor: ew-resize;
+    /* resize: horizontal; ---> 드래그로 너비 조절 가능하게 설정 (자바스크립트 들어가면 필요없음) */
+  }
+
+  .main {
+    flex: 1 1 auto;
+    background-color: #fff;
+    overflow: auto;
+  }
+</style>
+</head>
+
+<body>
+  <div class="west">
+    <p>This is the West section.</p>
+  </div>
+  <div class="main">
+    <p>This is the Main section.</p>
+  </div>
+
+
+  <script>
+    let startX;
+    let startWidth;
+
+    document.querySelector(".west").addEventListener("mousedown", function (e) {
+      startX = e.clientX;
+      startWidth = parseFloat(getComputedStyle(this).width);
+      document.addEventListener("mousemove", resize);
+      document.addEventListener("mouseup", stopResize);
+    });
+
+    function resize(e) {
+      const diffX = e.clientX - startX;
+      const newWidth = startWidth + diffX;
+      document.querySelector(".west").style.width = newWidth + "px";
+    }
+
+    function stopResize() {
+      document.removeEventListener("mousemove", resize);
+      document.removeEventListener("mouseup", stopResize);
+    }
+  </script>
+
+</body>
+
+</html>
