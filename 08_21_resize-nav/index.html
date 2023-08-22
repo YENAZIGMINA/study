@@ -1,67 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-  body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    height: 100vh;
-    overflow: hidden;
-  }
-
-  .west {
-    flex: 0 0 auto;
-    width: 200px; /* 초기 너비 설정 */
-    min-width: 100px; /* 최소 너비 제한 */
-    background-color: #f2f2f2;
-    overflow: auto;
-    cursor: ew-resize;
-    /* resize: horizontal; ---> 드래그로 너비 조절 가능하게 설정 (자바스크립트 들어가면 필요없음) */
-  }
-
-  .main {
-    flex: 1 1 auto;
-    background-color: #fff;
-    overflow: auto;
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>싸이트플래닝</title>
+  <!-- cdn -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css"/>
+  <link rel="stylesheet" href="/plugin/toastui/tui-grid/dist/tui-grid.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-  <div class="west">
-    <p>This is the West section.</p>
-  </div>
-  <div class="main">
-    <p>This is the Main section.</p>
-  </div>
+  
+  <header>
+    <h1>
+      <a href="#"><img src="img/logo_w_w.png" alt="siteplanning_logo"></a>
+      <span>Site-Data</span>
+    </h1>
+    <ul>
+      <li><a href="#">Admin</a></li>
+      <li><a href="#">Sign-in</a></li>
+      <li><a href="#">Sign-up</a></li>
+    </ul>
+  </header>
+
+  <main>
+    <div class="west">
+      <div class="west_wrap">
+        <h3>싸이트플래닝</h3>
+        <span></span>
+        <div class="line"></div>
+        <ul>
+          <li><a href="#"><i class="ri-arrow-right-s-line"></i>Global GBS</a></li>
+          <li><a href="#"><i class="ri-arrow-right-s-line"></i>산출물 검색</a></li>
+          <li><a href="#"><i class="ri-arrow-right-s-line"></i>모든 사용자</a></li>
+          <li><a href="#"><i class="ri-arrow-right-s-line"></i>모든 워크스페이스</a></li>
+          <li><a href="#"><i class="ri-arrow-right-s-line"></i>모든 프로젝트</a></li>
+        </ul>
+      </div> <!-- /west_wrap -->
+    </div> <!-- /west -->
+
+    <div class="content">
+      <h3><i class="ri-shield-keyhole-fill"></i> GBS 관리</h3>
+
+      <div class="cont_wrap">
+        <div class="glo_left glo">
+          <div class="glo_gbs">
+            <span class="tit">Global GBS</span>
+            <form action="#">
+              <label for="search"></label>
+              <input type="text" id="search" class="search" maxlength="10" placeholder="코드검색">
+              <button class="form_btn"><i class="ri-search-line"></i>검색</button>
+            </form>
+            <div id="grid"></div> <!-- ***toast ui grid -->
+          </div> <!-- /glo_gbs -->
+          <button class="plus_btn"><i class="ri-file-add-line"></i> GBS 추가</button>
+        </div> <!-- /glo_left -->
+
+        <div class="glo_right">
+          <div class="glo_data glo">
+            <span class="tit">Global Data 이력</span>
+            <form action="#">
+              <label for="search"></label>
+              <input type="text" id="search" class="search" maxlength="10" placeholder="검색">
+              <button><i class="ri-search-line"></i>검색</button>
+              <button><i class="ri-arrow-go-forward-line"></i>초기화</button>
+            </form>
+          </div>
+        <div class="glo_data_detail glo">
+          <span class="tit">Global Data 상세</span>
+        </div>
+        </div> <!-- /glo_right -->
+      </div> <!-- /cont_wrap -->
+    </div> <!-- /content -->
+  </main>
 
 
-  <script>
-    let startX;
-    let startWidth;
+  <footer>
+    <span>
+      COPYRIGHT©2019 siteplanning. ALL RIGHTS RESERVED. &nbsp;
+      <em><a href="#">Terms &middot;</a></em> 
+      <em><a href="#">Privacy &middot;</a></em>
+    </span>
+  </footer>
 
-    document.querySelector(".west").addEventListener("mousedown", function (e) {
-      startX = e.clientX;
-      startWidth = parseFloat(getComputedStyle(this).width);
-      document.addEventListener("mousemove", resize);
-      document.addEventListener("mouseup", stopResize);
-    });
 
-    function resize(e) {
-      const diffX = e.clientX - startX;
-      const newWidth = startWidth + diffX;
-      document.querySelector(".west").style.width = newWidth + "px";
-    }
 
-    function stopResize() {
-      document.removeEventListener("mousemove", resize);
-      document.removeEventListener("mouseup", stopResize);
-    }
-  </script>
+
+  
+  <script type="text/javascript" src="/plugin/toastui/tui-grid/dist/tui-grid.js"></script>
+  <script type="text/javascript" src="/plugin/toastui/tui-grid/data/tree-dummy.js"></script>
+  <script src="js/main.js"></script>
+
 
 </body>
-
 </html>

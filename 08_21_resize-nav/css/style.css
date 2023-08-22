@@ -1,0 +1,251 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@200;300;500;600;700;800&display=swap');
+/* font-family: 'Noto Sans KR', sans-serif; */
+
+
+*{margin: 0; padding: 0;}
+li {list-style: none;}
+a {text-decoration: none; color: #333;}
+em {font-style: normal; font-family: var(--main-text);}
+.container {width: 1400px; margin: 0 auto;}
+body {color: #333;}
+
+
+:root {
+    --main-text:'Noto Sans KR', sans-serif;
+
+    --main-font-size:25px;
+    --title-font-size:20px;
+    --sub--font-size:15px;
+    --min-font-size:13px;
+
+    --sub-font-color:#646464;
+
+    --main-color:#d71781;
+    --main-hov-color:#bd1370;
+
+    --line-color:#a0a0a0;
+}
+
+
+/* -----------header------------ */
+header {
+  display: flex; 
+  justify-content: space-between;
+  background-color: var(--main-color);
+  width: 100%;
+}
+header h1 {
+    display: flex;
+    align-items: center;
+}
+header h1 img {
+  width: 35px;
+  padding: 15px;
+  display: block;
+}
+header h1 span {
+    color: #fff;
+    font-size: var(--main-font-size);
+    font-family: var(--main-text);
+    margin-bottom: 5px;
+}
+header ul {
+    display: flex;
+    align-items: center;
+    padding-right: 40px;
+}
+header ul li {
+    margin-left: 40px;
+}
+header ul li:hover a {
+    color: #5a0a36;
+}
+header ul li::after {
+    content: '';
+    width: 0%; height: 2px;
+    background-color: #fff;
+    display: block;
+    transition: 0.3s ease-in-out;
+}
+header ul li:hover::after {
+    width: 100%;
+}
+header ul li a {
+    color: #fff;
+    font-family: var(--main-text);
+    font-weight: 400;
+    transition: 0.3s ease-in-out;
+}
+
+
+
+/* -----------main------------ */
+main {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.west {
+  flex: 0 0 auto;
+  width: 200px; /* 초기 너비 설정 */
+  min-width: 100px; /* 최소 너비 제한 */
+  background-color: #f2f2f2;
+  overflow: auto;
+  cursor: ew-resize;
+  /* resize: horizontal; ---> 드래그로 너비 조절 가능하게 설정 (자바스크립트 들어가면 필요없음) */
+}
+.west .west_wrap {margin-top: 30px;}
+.west .west_wrap h3 {
+    font-family: var(--main-text);
+    font-size: var(--title-font-size);
+    font-weight: 600;
+    text-align: center;
+    padding-bottom: 5px;
+}
+.west .west_wrap .line {
+    width: 83%;
+    border-bottom: 0.5px solid var(--line-color);
+    margin-left: 8%;
+    margin-top: 5px;
+}
+.west .west_wrap ul {
+    padding: 15px 20px 0;
+}
+.west .west_wrap ul li {
+    margin-bottom: 10px;
+    padding: 5px 0;
+    transition: 0.3s ease-in-out;
+}
+.west .west_wrap ul li a {
+    font-family: var(--main-text);
+    font-size: var(--sub--font-size);
+    color: var(--sub-font-color);
+    font-weight: 400;
+    transition: 0.3s ease-in-out;
+}
+.west .west_wrap ul li:hover {
+    display: block;
+    width: 100%;
+    background-color: var(--main-color);
+}
+.west .west_wrap ul li:hover a {color: #fff;}
+
+
+
+.content {
+  flex: 1 1 auto;
+  background-color: #fff;
+  overflow: auto;
+  padding: 30px;
+}
+.content h3 {
+    font-family: var(--main-text);
+    font-size: var(--title-font-size);
+    font-weight: 500;
+    border-bottom: 1px solid var(--line-color);
+    margin-bottom: 20px; padding-bottom: 10px;
+}
+.content .cont_wrap {
+    display: flex;
+    gap: 10px;
+}
+.content .cont_wrap .tit {
+    display: block;
+    text-align: center;
+    font-family: var(--main-text);
+    font-size: var(--sub--font-size);
+    color: #333;
+    padding: 8px 0;
+    margin-bottom: 15px;
+    /* background-color: var(--main-color); */
+    background-color: #ccc;
+}
+.content .cont_wrap .glo {
+    border: 1px solid var(--line-color);
+    border-radius: 4px;
+    box-shadow: 2px 1px 5px #8b8b8b43;
+    width: 100%;
+}
+.content .cont_wrap .glo_left {width: 49%;}
+.content .cont_wrap .glo_right {width: 49%;}
+
+.content .cont_wrap .glo_left .glo_gbs {}
+.content .cont_wrap .glo_left .glo_gbs form,
+.content .cont_wrap .glo_right .glo_data form {
+    text-align: center;
+    margin: 20px 0;
+}
+.content .cont_wrap .glo_left .glo_gbs form label {}
+.content .cont_wrap .glo_left .glo_gbs form input,
+.content .cont_wrap .glo_right .glo_data form input {
+    width: 15vw; height: 2.5vh;
+    border-radius: 0;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid var(--line-color);
+    padding: 3px;
+    margin-right: 10px;
+}
+.content .cont_wrap .glo_left .glo_gbs form button,
+.content .cont_wrap .glo_right .glo_data form button {
+    padding: 5px 12px;
+    background-color: var(--main-color);
+    outline: none; border: none;
+    border-radius: 1px;
+    font-family: var(--main-text);
+    font-size: var(--min-font-size);
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+.content .cont_wrap .glo_right .glo_data form button {margin-right: -3px;}
+.content .cont_wrap .glo_left .glo_gbs form button:hover,
+.content .cont_wrap .glo_right .glo_data form button:hover {
+    background-color: var(--main-hov-color);
+    color: #fff;
+}
+.content .cont_wrap .glo_right .glo_data {
+    margin-bottom: 10px;
+}
+.content .cont_wrap .glo_left .plus_btn {
+    padding: 6px 20px;
+    margin: 20px 35%;
+    outline: none;
+    background-color: none;
+    border: 1px solid var(--main-color);
+    border-radius: 50px;
+    font-family: var(--main-text);
+    font-size: var(--sub--font-size);
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+.content .cont_wrap .glo_left .plus_btn:hover {
+    background-color: var(--main-color);
+    color: #fff;
+}
+
+.content .cont_wrap .glo_right .glo_data_detail {}
+
+
+
+
+
+/* -----------footer------------ */
+footer {
+    text-align: center;
+    line-height: 5vh;
+    height: 5vh;
+    background-color: #333;
+}
+footer span {
+    font-family: var(--main-text);
+    font-weight: 300;
+    font-size: var(--min-font-size);
+    color: var(--main-color);
+    letter-spacing: 2px;
+}
+footer span em a{
+    color: #fff;
+    font-weight: 600;
+}
